@@ -23,13 +23,8 @@ class GildedRose {
                 increaseQualityIfLessThan50(item);
 
                 if (item.name.equals(TAFKAL_80_CONCERT)) {
-                    if (item.sellIn < 11) {
-                        increaseQualityIfLessThan50(item);
-                    }
-
-                    if (item.sellIn < 6) {
-                        increaseQualityIfLessThan50(item);
-                    }
+                    increaseQualityDependsOnSellIn(item, 11);
+                    increaseQualityDependsOnSellIn(item, 6);
                 }
             }
         }
@@ -48,6 +43,12 @@ class GildedRose {
             } else {
                 increaseQualityIfLessThan50(item);
             }
+        }
+    }
+
+    private static void increaseQualityDependsOnSellIn(Item item, int num) {
+        if (item.sellIn < num) {
+            increaseQualityIfLessThan50(item);
         }
     }
 
