@@ -24,7 +24,7 @@ class GildedRose {
             }
         } else {
             if (item.quality < 50) {
-                item.quality = item.quality + 1;
+                increaseQualityIfLessThan50(item);
 
                 if (item.name.equals(TAFKAL_80_CONCERT)) {
                     if (item.sellIn < 11) {
